@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>HADJ TAYEB AUTO | النخبة في عالم السيارات</title>
+    <title>EL HADO AUTO  | النخبة في عالم السيارات</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -147,7 +147,7 @@
         <div class="bg-gradient-to-r from-red-950/40 via-laserred/10 to-red-950/40 border-b border-laserred/10 overflow-hidden py-2 text-[10px] font-black text-laserred uppercase tracking-widest flex whitespace-nowrap" dir="ltr">
             <div class="animate-marquee-fast flex gap-12 whitespace-nowrap">
                 <span>✦ بيع • شراء • استبدال • استيراد بالطلب ✦</span>
-                <span>✦ HADJ TAYEB AUTO • النخبة في عالم السيارات ✦</span>
+                <span>✦ EL HADO AUTO  • النخبة في عالم السيارات ✦</span>
                 <span>✦ تسليم فوري • ضمان الجودة العالية ✦</span>
                 <span>✦ بيع • شراء • استبدال • استيراد بالطلب ✦</span>
             </div>
@@ -167,7 +167,7 @@
                 </svg>
                 
                 <div class="flex flex-col items-center justify-center relative z-10 leading-none">
-                    <h1 class="text-base font-black tracking-tighter uppercase brand-glow-text font-sans" dir="ltr">HADJ TAYEB AUTO</h1>
+                    <h1 class="text-base font-black tracking-tighter uppercase brand-glow-text font-sans" dir="ltr">EL HADO AUTO </h1>
                     <h2 class="text-[10px] font-bold text-white tracking-widest mt-0.5">الحاج طيب أوتو</h2>
                 </div>
             </div>
@@ -338,7 +338,7 @@
 
         <div class="p-6 border-t border-white/5 bg-neutral-950/40 text-center space-y-6 mt-12 mb-12">
             <div class="space-y-1">
-                <h4 class="text-sm font-black text-laserred uppercase tracking-widest">تواصل مع HADJ TAYEB AUTO</h4>
+                <h4 class="text-sm font-black text-laserred uppercase tracking-widest">تواصل مع EL HADO AUTO </h4>
                 <p class="text-[10px] text-zinc-400 font-bold">تابعنا على شبكات التواصل الاجتماعي ليصلك كل جديد</p>
             </div>
             
@@ -1250,8 +1250,8 @@
             document.getElementById('svg-front-wing').setAttribute('fill', mappedZones.frontWing ? '#f43f5e' : '#15151f');
 
             const targetNegotiatePitch = state.lang === 'fr' 
-                ? `Salam HADJ TAYEB AUTO, je souhaite obtenir des informations concernant la voiture ${car.marque} ${car.modele} (${car.annee}) affichée à ${car.prix}.`
-                : `السلام عليكم HADJ TAYEB AUTO، راني مهتم بسيارة ${car.marque} ${car.modele} (${car.annee}) المعروضة بسعر ${car.prix}. حاب تفاصيل أكثر من فضلك.`;
+                ? `Salam EL HADO AUTO , je souhaite obtenir des informations concernant la voiture ${car.marque} ${car.modele} (${car.annee}) affichée à ${car.prix}.`
+                : `السلام عليكم EL HADO AUTO ، راني مهتم بسيارة ${car.marque} ${car.modele} (${car.annee}) المعروضة بسعر ${car.prix}. حاب تفاصيل أكثر من فضلك.`;
             document.getElementById('modal-whatsapp-btn').href = `https://wa.me/${SHOWROOM_CONFIG.whatsappNumber}?text=${encodeURIComponent(targetNegotiatePitch)}`;
 
             const galleryTrack = document.getElementById('modal-image-swiper');
@@ -1318,8 +1318,8 @@
             if (!name || !year || !km) { triggerToastNotification(lexicons[state.lang].errorFields); return; }
 
             const structuredExchangeMsg = state.lang === 'fr' 
-                ? `Salam HADJ TAYEB AUTO, je propose un échange (Reprise):\n\n✦ Mon véhicule : ${name} (${year})\n✦ KM : ${km}\n✦ État : ${paint || 'Parfait'}\n\n🔄 Contre : ${target}`
-                : `السلام عليكم HADJ TAYEB AUTO، حاب ندير تبديل (Reprise):\n\n✦ سيارتي: ${name} (${year})\n✦ العداد: ${km}\n✦ الحالة: ${paint || 'صافية'}\n\n🔄 السيارة المطلوبة من المعرض: ${target}`;
+                ? `Salam EL HADO AUTO , je propose un échange (Reprise):\n\n✦ Mon véhicule : ${name} (${year})\n✦ KM : ${km}\n✦ État : ${paint || 'Parfait'}\n\n🔄 Contre : ${target}`
+                : `السلام عليكم EL HADO AUTO ، حاب ندير تبديل (Reprise):\n\n✦ سيارتي: ${name} (${year})\n✦ العداد: ${km}\n✦ الحالة: ${paint || 'صافية'}\n\n🔄 السيارة المطلوبة من المعرض: ${target}`;
                 
             window.open(`https://wa.me/${SHOWROOM_CONFIG.whatsappNumber}?text=${encodeURIComponent(structuredExchangeMsg)}`, '_blank');
             closeRepriseModal();
@@ -1328,8 +1328,8 @@
 
         function openWhatsappNav() {
             const genericMsg = state.lang === 'fr' 
-                ? `Salam HADJ TAYEB AUTO, je vous contacte depuis votre catalogue digital.`
-                : `السلام عليكم HADJ TAYEB AUTO، راني نتواصل معاكم من الكاتالوج الرقمي.`;
+                ? `Salam EL HADO AUTO , je vous contacte depuis votre catalogue digital.`
+                : `السلام عليكم EL HADO AUTO ، راني نتواصل معاكم من الكاتالوج الرقمي.`;
             window.open(`https://wa.me/${SHOWROOM_CONFIG.whatsappNumber}?text=${encodeURIComponent(genericMsg)}`, '_blank');
         }
 
