@@ -75,8 +75,14 @@
 
     <div class="mobile-container relative">
 
-        <!-- 🌐 GLOBAL LANGUAGE SWITCHER 🌐 -->
-        <div class="absolute top-4 right-4 z-[80]">
+        <!-- 🛡️🌐 TOP CONTROLS: ADMIN SHIELD & LANGUAGE SWITCHER SIDE BY SIDE 🌐🛡️ -->
+        <div class="absolute top-4 right-4 z-[80] flex items-center gap-2" dir="ltr">
+            <!-- ADMIN SHIELD BUTTON -->
+            <button onclick="openAdminAuth()" title="Administration" class="bg-cardgray/90 border border-hadoyellow/50 text-hadoyellow w-9 h-9 rounded-full flex items-center justify-center backdrop-blur-md shadow-[0_0_15px_rgba(250,204,21,0.2)] hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                <i class="fa-solid fa-shield-halved text-xs"></i>
+            </button>
+
+            <!-- LANGUAGE SWITCHER BUTTON -->
             <button onclick="toggleLanguage()" class="bg-cardgray/90 border border-hadoyellow/50 text-white px-3.5 py-1.5 rounded-full text-[10px] font-black tracking-widest uppercase backdrop-blur-md shadow-[0_0_15px_rgba(250,204,21,0.2)] hover:scale-105 active:scale-95 transition-all flex items-center gap-1.5 cursor-pointer">
                 <i class="fa-solid fa-globe text-hadoyellow"></i>
                 <span id="lang-btn-text">AR</span>
@@ -181,17 +187,13 @@
                     <h1 class="text-sm font-brand font-black text-white tracking-widest uppercase">EL HADO <span class="text-hadoyellow">AUTO</span></h1>
                     <h2 id="header-subtitle" class="text-[8px] font-bold text-hadoyellow tracking-widest mt-0.5 uppercase">Catalogue</h2>
                 </div>
-                
-                <!-- 🛡️ ADMIN ICON (CLICK HERE FOR CODE Hado24) 🛡️ -->
-                <button onclick="openAdminAuth()" title="Administration" class="w-10 h-10 rounded-full bg-hadoyellow/10 border border-hadoyellow/40 flex items-center justify-center text-hadoyellow hover:bg-hadoyellow hover:text-black transition-all cursor-pointer shadow-[0_0_15px_rgba(250,204,21,0.2)]">
-                    <i class="fa-solid fa-shield-halved text-sm"></i>
-                </button>
+                <div class="w-9 h-9 opacity-0 pointer-events-none"></div>
             </header>
 
             <div id="catalog-scroll-area" class="flex-1 overflow-y-auto hide-scrollbar p-4 pb-36 relative z-10">
                 
                 <!-- 🔗 SOCIAL LINKS & MAPS 🔗 -->
-                <div class="relative z-50 flex justify-center gap-3 mb-4" dir="ltr">
+                <div class="relative z-50 flex justify-center gap-3 mb-4 mt-2" dir="ltr">
                     <a id="link-fb" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-cardgray border border-white/10 flex items-center justify-center text-zinc-300 hover:text-hadoyellow hover:border-hadoyellow/50 transition-all shadow-md cursor-pointer">
                         <i class="fa-brands fa-facebook-f pointer-events-none"></i>
                     </a>
@@ -596,7 +598,7 @@
             renderCatalog();
         }
 
-        // ================= FETCH SUPABASE DATA (elhado_vehicles) =================
+        // ================= FETCH SUPABASE DATA =================
         async function fetchVehicles() {
             try {
                 if (supabaseClient) {
@@ -823,7 +825,7 @@
             e.preventDefault();
             const btn = document.getElementById('btn-submit-lead');
             const originalText = btn.innerHTML;
-            btn.innerHTML = `<span class="relative z-10 flex items-center gap-2"><i class="fa-solid fa-spinner animate-spin"></i> Envoi...</span>`;
+            btn.innerHTML = `<span class="relative z-10 flex items-center gap-2"><i class="fa-solid fa-spinner animate-spin"></i> Traitement...</span>`;
             
             const leadData = {
                 carName: document.getElementById('lead-car-name').value, name: document.getElementById('lead-name').value,
@@ -889,6 +891,9 @@
                     const { data: pubData } = supabaseClient.storage.from('elhado-images').getPublicUrl(fileName);
                     state.tempImages.push(pubData.publicUrl);
                     container.innerHTML += `<img src="${pubData.publicUrl}" class="w-16 h-16 object-cover rounded-lg border border-white/20">`;
+                } else if(error) {
+                    console.error("Storage Error:", error);
+                    alert("Erreur upload photo: " + error.message);
                 }
             }
             document.getElementById('f-image-label').innerText = `${state.tempImages.length} images envoyées avec succès`;
@@ -928,21 +933,41 @@
             }
 
             if(!finalImages || finalImages.length === 0) {
-                alert("Veuillez ajouter au moins une photo."); btn.innerHTML = originalText; return;
+                alert(currentLang === 'fr' ? "Veuillez ajouter au moins une photo." : "يرجى إضافة صورة واحدة على الأقل."); 
+                btn.innerHTML = originalText; 
+                return;
             }
 
             const payload = {
-                id: String(carId), typeCategory: document.getElementById('f-category').value, prix: document.getElementById('f-prix').value,
-                marque: document.getElementById('f-marque').value.toUpperCase(), modele: document.getElementById('f-modele').value,
-                annee: document.getElementById('f-annee').value, km: document.getElementById('f-km').value, boite: document.getElementById('f-boite').value,
-                moteur: document.getElementById('f-moteur').value, couleur: document.getElementById('f-couleur').value, desc: document.getElementById('f-desc').value,
-                images: finalImages, status: existingCar ? existingCar.status : 'disponible', createdAt: existingCar ? existingCar.createdAt : Date.now()
+                id: String(carId), 
+                typeCategory: document.getElementById('f-category').value, 
+                prix: document.getElementById('f-prix').value,
+                marque: document.getElementById('f-marque').value.toUpperCase(), 
+                modele: document.getElementById('f-modele').value,
+                annee: document.getElementById('f-annee').value, 
+                km: document.getElementById('f-km').value, 
+                boite: document.getElementById('f-boite').value,
+                moteur: document.getElementById('f-moteur').value, 
+                couleur: document.getElementById('f-couleur').value, 
+                desc: document.getElementById('f-desc').value,
+                images: finalImages, 
+                status: existingCar ? existingCar.status : 'disponible', 
+                createdAt: existingCar ? (existingCar.createdAt || Date.now()) : Date.now()
             };
 
-            try {
-                if (supabaseClient) await supabaseClient.from('elhado_vehicles').upsert([payload]);
-                showToast("Sauvegardé avec succès!"); resetAdminForm(); fetchVehicles();
-            } catch(e) {}
+            if (supabaseClient) {
+                const { data, error } = await supabaseClient.from('elhado_vehicles').upsert([payload]);
+                if (error) {
+                    alert("Erreur Supabase: " + error.message);
+                    console.error("Supabase Error:", error);
+                    btn.innerHTML = originalText;
+                    return;
+                }
+            }
+
+            showToast(currentLang === 'fr' ? "Sauvegardé avec succès!" : "تم الحفظ بنجاح!"); 
+            resetAdminForm(); 
+            await fetchVehicles();
             btn.innerHTML = originalText;
         }
 
