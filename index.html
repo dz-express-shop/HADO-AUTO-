@@ -13,11 +13,11 @@
             theme: {
                 extend: {
                     colors: {
-                        obsidian: '#111827',     // Dark Gray (Gris foncé)
-                        metalic: '#1F2937',      // Medium Gray
-                        cardgray: '#374151',     // Light Gray
-                        mousegrey: '#4B5563',
-                        hadoyellow: '#FACC15',   // Brand Yellow
+                        obsidian: '#08080a',     // Pure Jet Dark
+                        metalic: '#121216',      // Premium Charcoal
+                        cardgray: '#1a1a22',     // Sleek Dark Gray
+                        mousegrey: '#2e2e38',
+                        hadoyellow: '#FACC15',   // Electric Yellow / Gold Accent
                         yellowglow: '#FEF08A',
                         crimsonred: '#DC2626',
                         whitepure: '#FFFFFF'
@@ -33,11 +33,11 @@
                     keyframes: {
                         floatSlow: { '0%, 100%': { transform: 'translateY(0px)' }, '50%': { transform: 'translateY(-8px)' } },
                         slideUp: { '0%': { opacity: '0', transform: 'translateY(20px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-                        pulseYellow: { '0%, 100%': { boxShadow: '0 0 15px rgba(250, 204, 21, 0.4)' }, '50%': { boxShadow: '0 0 35px rgba(250, 204, 21, 0.8)' } },
+                        pulseYellow: { '0%, 100%': { boxShadow: '0 0 15px rgba(250, 204, 21, 0.3)' }, '50%': { boxShadow: '0 0 35px rgba(250, 204, 21, 0.7)' } },
                         shimmer: { '0%': { transform: 'translateX(-100%)' }, '100%': { transform: 'translateX(200%)' } },
                         breathingGlow: {
                             '0%': { textShadow: '0 0 10px rgba(250,204,21,0.3)', filter: 'drop-shadow(0 0 15px rgba(250,204,21,0.4))' },
-                            '100%': { textShadow: '0 0 30px rgba(250,204,21,0.8)', filter: 'drop-shadow(0 0 30px rgba(250,204,21,0.8))' }
+                            '100%': { textShadow: '0 0 30px rgba(250,204,21,0.9)', filter: 'drop-shadow(0 0 30px rgba(250,204,21,0.9))' }
                         },
                         successPop: { '0%': { opacity: '0', transform: 'scale(0.8)' }, '100%': { opacity: '1', transform: 'scale(1)' } }
                     }
@@ -50,25 +50,25 @@
     <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800;900&family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
 
     <style>
-        body { background-color: #111827; color: #f4f4f6; font-family: 'Alexandria', sans-serif; -webkit-font-smoothing: antialiased; overflow: hidden; height: 100vh; width: 100vw; }
+        body { background-color: #08080a; color: #f4f4f6; font-family: 'Alexandria', sans-serif; -webkit-font-smoothing: antialiased; overflow: hidden; height: 100vh; width: 100vw; }
         .font-brand { font-family: 'Montserrat', sans-serif; }
-        .mobile-container { max-width: 520px; margin: 0 auto; background: #111827; height: 100vh; position: relative; box-shadow: 0 0 100px rgba(250, 204, 21, 0.08); border-left: 1px solid rgba(255, 255, 255, 0.05); border-right: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; overflow: hidden; }
+        .mobile-container { max-width: 520px; margin: 0 auto; background: #08080a; height: 100vh; position: relative; box-shadow: 0 0 100px rgba(250, 204, 21, 0.08); border-left: 1px solid rgba(255, 255, 255, 0.05); border-right: 1px solid rgba(255, 255, 255, 0.05); display: flex; flex-direction: column; overflow: hidden; }
         @media (min-width: 1024px) { .mobile-container { max-width: 900px; border-radius: 24px; height: 92vh; margin: 4vh auto; border: 1px solid rgba(255, 255, 255, 0.12); } }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         .snap-x-mandatory { scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
         .snap-center-item { scroll-snap-align: center; }
-        .glass-panel { background: rgba(31, 41, 55, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.08); }
-        .glass-header { background: rgba(17, 24, 39, 0.95); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
-        .gateway-card { background: rgba(55, 65, 81, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; position: relative; overflow: hidden; }
-        .gateway-card:hover { border-color: rgba(250, 204, 21, 0.6); background: rgba(250, 204, 21, 0.05); transform: translateY(-3px); box-shadow: 0 15px 30px -10px rgba(250, 204, 21, 0.15); }
-        .car-sold-glow { border: 2px solid #DC2626 !important; box-shadow: 0 0 30px rgba(220, 38, 38, 0.2) !important; }
+        .glass-panel { background: rgba(18, 18, 22, 0.85); backdrop-filter: blur(20px); border: 1px solid rgba(250, 204, 21, 0.12); }
+        .glass-header { background: rgba(8, 8, 10, 0.95); backdrop-filter: blur(24px); border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+        .gateway-card { background: rgba(26, 26, 34, 0.6); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.08); transition: all 0.3s ease; position: relative; overflow: hidden; }
+        .gateway-card:hover { border-color: rgba(250, 204, 21, 0.6); background: rgba(250, 204, 21, 0.04); transform: translateY(-3px); box-shadow: 0 15px 30px -10px rgba(250, 204, 21, 0.2); }
+        .car-sold-glow { border: 2px solid #DC2626 !important; box-shadow: 0 0 30px rgba(220, 38, 38, 0.25) !important; }
         .car-sold-glow img { filter: grayscale(90%) contrast(1.2) brightness(0.6); }
         .sold-badge-fx { background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 100%); color: white; box-shadow: 0 4px 15px rgba(220, 38, 38, 0.5); animation: pulseRed 2s infinite; }
         .page-layer { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; pointer-events: none; z-index: 10; display: none; transition: opacity 0.2s ease; }
         .page-layer.active { opacity: 1; pointer-events: auto; z-index: 20; display: flex; }
-        .admin-input { width: 100%; background: #1F2937; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 16px; font-size: 11px; font-weight: 700; color: white; transition: all 0.3s; }
-        .admin-input:focus { outline: none; border-color: #FACC15; background: #111827; }
+        .admin-input { width: 100%; background: #121216; border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 16px; font-size: 11px; font-weight: 700; color: white; transition: all 0.3s; }
+        .admin-input:focus { outline: none; border-color: #FACC15; background: #08080a; box-shadow: 0 0 15px rgba(250,204,21,0.2); }
     </style>
 </head>
 <body class="antialiased selection:bg-hadoyellow selection:text-black">
@@ -77,37 +77,44 @@
 
         <!-- ================= PAGE 1: LUXURY ENTRANCE ================= -->
         <section id="page-1" class="page-layer active flex-col justify-center items-center bg-obsidian relative overflow-hidden p-6">
-            <div class="absolute top-[10%] left-[-20%] w-96 h-96 bg-hadoyellow/10 rounded-full blur-[120px] pointer-events-none"></div>
-            <div class="absolute bottom-[10%] right-[-20%] w-96 h-96 bg-yellow-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+            <div class="absolute top-[10%] left-[-20%] w-96 h-96 bg-hadoyellow/15 rounded-full blur-[130px] pointer-events-none"></div>
+            <div class="absolute bottom-[10%] right-[-20%] w-96 h-96 bg-yellow-600/10 rounded-full blur-[130px] pointer-events-none"></div>
             
             <div class="relative z-10 flex flex-col items-center animate-slide-up-fade text-center px-4 w-full my-auto">
                 <div class="text-center space-y-4 my-auto">
-                    <div class="relative inline-block mb-4 group">
-                        <div class="inline-flex items-center justify-center w-24 h-24 rounded-3xl bg-gradient-to-br from-hadoyellow to-yellow-700 shadow-[0_0_30px_rgba(250,204,21,0.5)] relative z-10 animate-float-slow">
-                            <i class="fa-solid fa-car-side text-5xl text-black"></i>
+                    
+                    <!-- 🏆 EXCLUSIVE MATCHY LOGO BADGE 🏆 -->
+                    <div class="relative inline-block mb-3 group">
+                        <div class="absolute -inset-3 bg-gradient-to-r from-hadoyellow/40 via-yellowglow/60 to-hadoyellow/40 rounded-[32px] blur-xl opacity-70 animate-pulse"></div>
+                        <div class="w-24 h-24 md:w-28 md:h-28 rounded-[28px] bg-gradient-to-br from-hadoyellow via-yellow-400 to-yellow-600 p-[2px] shadow-[0_0_35px_rgba(250,204,21,0.5)] relative z-10 animate-float-slow">
+                            <div class="w-full h-full bg-obsidian rounded-[26px] flex flex-col items-center justify-center relative overflow-hidden border border-hadoyellow/30">
+                                <div class="absolute inset-0 bg-gradient-to-t from-hadoyellow/20 via-transparent to-transparent"></div>
+                                <i class="fa-solid fa-car-rear text-3xl md:text-4xl text-hadoyellow drop-shadow-[0_0_12px_rgba(250,204,21,0.8)]"></i>
+                                <span class="text-[9px] font-brand font-black text-white tracking-widest mt-1 uppercase">HADO</span>
+                            </div>
                         </div>
                     </div>
 
-                    <h1 class="text-4xl md:text-5xl font-brand font-black text-white tracking-tighter uppercase leading-none drop-shadow-[0_0_25px_rgba(250,204,21,0.4)]" dir="ltr">
+                    <h1 class="text-4xl md:text-5xl font-brand font-black text-white tracking-tighter uppercase leading-none drop-shadow-[0_0_25px_rgba(250,204,21,0.5)] animate-breathing-glow" dir="ltr">
                         EL HADO <span class="text-hadoyellow">AUTO</span>
                     </h1>
 
                     <div class="py-2 space-y-2">
-                        <h2 class="text-xl md:text-2xl font-black text-white leading-snug tracking-tight">التميز في عالم السيارات</h2>
+                        <h2 class="text-xl md:text-2xl font-black text-white leading-snug tracking-tight">التميز والرياضية في عالم السيارات</h2>
                         <p class="text-xs md:text-sm text-zinc-300 font-medium leading-relaxed max-w-md mx-auto">
-                            الوجهة الأولى لاقتناء أرقى السيارات المتوفرة في المعرض أو الاستيراد المباشر بأعلى معايير الثقة.
+                            الوجهة الأولى لاقتناء أرقى السيارات المتوفرة في المعرض أو الاستيراد المباشر بأعلى معايير الاعتمادية.
                         </p>
                     </div>
 
-                    <div class="w-32 h-[2px] bg-gradient-to-r from-transparent via-hadoyellow to-transparent mx-auto opacity-80 my-4"></div>
+                    <div class="w-32 h-[2px] bg-gradient-to-r from-transparent via-hadoyellow to-transparent mx-auto opacity-80 my-3"></div>
 
                     <p class="text-zinc-300 text-[10px] md:text-xs font-extrabold tracking-[0.25em] uppercase font-brand" dir="ltr">
-                        Excellence <span class="text-hadoyellow mx-1">|</span> Confiance <span class="text-hadoyellow mx-1">|</span> Prestige
+                        Excellence <span class="text-hadoyellow mx-1">|</span> Prestige <span class="text-hadoyellow mx-1">|</span> Power
                     </p>
                 </div>
 
-                <button onclick="navigateTo('page-2')" class="mt-10 relative group bg-transparent border border-white/20 text-white px-10 py-4 rounded-full font-black text-xs tracking-widest uppercase overflow-hidden hover:border-hadoyellow hover:text-hadoyellow transition-all shadow-[0_0_30px_rgba(250,204,21,0.2)] active:scale-95 cursor-pointer">
-                    <div class="absolute inset-0 bg-hadoyellow/5 group-hover:bg-hadoyellow/10 transition-all"></div>
+                <button onclick="navigateTo('page-2')" class="mt-8 relative group bg-hadoyellow text-black px-10 py-4 rounded-full font-black text-xs tracking-widest uppercase overflow-hidden hover:bg-yellow-400 transition-all shadow-[0_0_30px_rgba(250,204,21,0.4)] active:scale-95 cursor-pointer">
+                    <div class="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-all"></div>
                     <span class="relative z-10 flex items-center gap-3">دخول المعرض <i class="fa-solid fa-arrow-left"></i></span>
                 </button>
             </div>
@@ -121,7 +128,7 @@
             </div>
 
             <div class="w-full space-y-5 relative z-10 max-w-md mx-auto">
-                <div onclick="enterCatalog('disponible')" class="gateway-card p-6 rounded-[28px] cursor-pointer flex flex-col gap-3 group">
+                <div onclick="enterCatalog('disponible')" class="gateway-card p-6 rounded-[28px] cursor-pointer flex flex-col gap-3 group border border-white/10">
                     <div class="flex items-center justify-between">
                         <div class="w-14 h-14 rounded-2xl bg-hadoyellow/10 border border-hadoyellow/30 flex items-center justify-center text-hadoyellow text-2xl shadow-[0_0_20px_rgba(250,204,21,0.2)] group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-warehouse"></i>
@@ -135,7 +142,7 @@
                     </div>
                 </div>
 
-                <div onclick="enterCatalog('commande')" class="gateway-card p-6 rounded-[28px] cursor-pointer flex flex-col gap-3 group">
+                <div onclick="enterCatalog('commande')" class="gateway-card p-6 rounded-[28px] cursor-pointer flex flex-col gap-3 group border border-white/10">
                     <div class="flex items-center justify-between">
                         <div class="w-14 h-14 rounded-2xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 text-2xl shadow-[0_0_20px_rgba(59,130,246,0.2)] group-hover:scale-110 transition-transform">
                             <i class="fa-solid fa-ship"></i>
@@ -145,7 +152,7 @@
                     <div>
                         <span class="text-[8px] bg-blue-600 text-white px-2 py-0.5 rounded font-black tracking-widest mb-1.5 inline-block">استيراد خاص</span>
                         <h3 class="text-xl font-black text-white leading-none mb-2">سيارات بالطلب</h3>
-                        <p class="text-[11px] text-zinc-400 font-bold leading-relaxed">استيراد سيارات جديدة ومستعملة من الخارج مباشرة إليك.</p>
+                        <p class="text-[11px] text-zinc-400 font-bold leading-relaxed">استيراد سيارات جديدة ومستعملة بأعلى المعايير مباشرة إليك.</p>
                     </div>
                 </div>
             </div>
@@ -163,7 +170,7 @@
                     <i class="fa-solid fa-arrow-right"></i>
                 </button>
                 <div class="flex flex-col items-center cursor-pointer group" onclick="document.getElementById('catalog-scroll-area').scrollTo({top:0, behavior:'smooth'})">
-                    <h1 class="text-sm font-brand font-black text-white tracking-widest uppercase">EL HADO AUTO</h1>
+                    <h1 class="text-sm font-brand font-black text-white tracking-widest uppercase">EL HADO <span class="text-hadoyellow">AUTO</span></h1>
                     <h2 id="header-subtitle" class="text-[8px] font-bold text-hadoyellow tracking-widest mt-0.5 uppercase">الكتالوج</h2>
                 </div>
                 <button onclick="openAdminAuth()" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-400 hover:text-hadoyellow transition-all cursor-pointer">
@@ -172,9 +179,27 @@
             </header>
 
             <div id="catalog-scroll-area" class="flex-1 overflow-y-auto hide-scrollbar p-4 pb-36 relative z-10">
-                <div class="relative mb-3 max-w-lg mx-auto w-full z-20 mt-2">
+                
+                <!-- 🔗 SOCIAL LINKS & MAPS 🔗 -->
+                <div class="relative z-50 flex justify-center gap-3 mb-4" dir="ltr">
+                    <a id="link-fb" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-cardgray border border-white/10 flex items-center justify-center text-zinc-300 hover:text-hadoyellow hover:border-hadoyellow/50 transition-all shadow-md cursor-pointer">
+                        <i class="fa-brands fa-facebook-f pointer-events-none"></i>
+                    </a>
+                    <a id="link-insta" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-cardgray border border-white/10 flex items-center justify-center text-zinc-300 hover:text-hadoyellow hover:border-hadoyellow/50 transition-all shadow-md cursor-pointer">
+                        <i class="fa-brands fa-instagram pointer-events-none"></i>
+                    </a>
+                    <a id="link-tiktok" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-cardgray border border-white/10 flex items-center justify-center text-zinc-300 hover:text-hadoyellow hover:border-hadoyellow/50 transition-all shadow-md cursor-pointer">
+                        <i class="fa-brands fa-tiktok pointer-events-none"></i>
+                    </a>
+                    <a id="link-maps" href="#" target="_blank" rel="noopener noreferrer" class="w-10 h-10 rounded-xl bg-hadoyellow/20 border border-hadoyellow/40 flex items-center justify-center text-hadoyellow hover:bg-hadoyellow hover:text-black transition-all shadow-md cursor-pointer">
+                        <i class="fa-solid fa-location-dot pointer-events-none"></i>
+                    </a>
+                </div>
+
+                <!-- SEARCH BAR -->
+                <div class="relative mb-3 max-w-lg mx-auto w-full z-20">
                     <i class="fa-solid fa-search absolute left-4 top-1/2 -translate-y-1/2 text-zinc-500 text-xs"></i>
-                    <input type="text" id="searchInput" oninput="renderCatalog()" placeholder="ابحث عن ماركة، موديل..." class="w-full bg-metalic border border-white/10 rounded-2xl pl-10 pr-4 py-3.5 text-[11px] font-bold text-white focus:outline-none focus:border-hadoyellow transition-colors">
+                    <input type="text" id="searchInput" oninput="renderCatalog()" placeholder="ابحث عن ماركة، موديل..." class="w-full bg-cardgray border border-white/10 rounded-2xl pl-10 pr-4 py-3.5 text-[11px] font-bold text-white focus:outline-none focus:border-hadoyellow transition-colors">
                 </div>
 
                 <div id="brandFilterContainer" class="flex items-center gap-2 overflow-x-auto hide-scrollbar mb-5 max-w-lg mx-auto w-full z-20 py-1" dir="ltr"></div>
@@ -276,7 +301,7 @@
                                         <div><label class="text-[8px] text-zinc-400 font-bold ml-1 mb-1 block">البلدية (Commune) *</label><input type="text" id="lead-commune" placeholder="البلدية" required class="admin-input"></div>
                                     </div>
                                     <div><label class="text-[8px] text-zinc-400 font-bold ml-1 mb-1 block">رقم بطاقة التعريف أو جواز السفر *</label><input type="text" id="lead-nin" placeholder="N° Carte Nat / Passeport" required class="admin-input" dir="ltr"></div>
-                                    <button type="submit" id="btn-submit-lead" class="w-full bg-hadoyellow text-black py-4 rounded-xl font-black text-xs shadow-[0_5px_20px_rgba(250,204,21,0.3)] hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-2 mt-4 cursor-pointer">تأكيد وإرسال الطلب <i class="fa-solid fa-paper-plane"></i></button>
+                                    <button type="submit" id="btn-submit-lead" class="w-full bg-hadoyellow text-black py-4 rounded-xl font-black text-xs shadow-[0_5px_20px_rgba(250,204,21,0.3)] hover:bg-yellow-400 transition-all flex items-center justify-center gap-2 mt-4 cursor-pointer">تأكيد وإرسال الطلب <i class="fa-solid fa-paper-plane"></i></button>
                                 </form>
                             </div>
                             <div id="thank-you-wrapper" class="relative z-10 hidden flex-col items-center justify-center text-center py-6 animate-success-pop">
@@ -293,7 +318,7 @@
 
         <!-- ================= ADMIN SYSTEM ================= -->
         <div id="biometricPinOverlay" class="fixed inset-0 bg-black/95 backdrop-blur-md z-[100] flex items-center justify-center hidden">
-            <div class="w-80 p-8 glass-panel rounded-3xl text-center space-y-6 shadow-2xl border border-hadoyellow/20">
+            <div class="w-80 p-8 glass-panel rounded-3xl text-center space-y-6 shadow-2xl border border-hadoyellow/30">
                 <i class="fa-solid fa-user-shield text-hadoyellow text-5xl"></i>
                 <div>
                     <h3 class="text-sm font-black text-white">تسجيل دخول الإدارة</h3>
@@ -344,7 +369,7 @@
                             <div id="multi-img-preview-container" class="flex gap-2 mt-4 overflow-x-auto hide-scrollbar hidden"></div>
                         </div>
                         <div class="flex gap-3 pt-2">
-                            <button type="submit" id="btn-save-car" class="flex-1 bg-hadoyellow text-black hover:bg-yellow-500 rounded-xl py-3.5 text-xs font-black transition cursor-pointer shadow-lg shadow-hadoyellow/20">حفظ السيارة</button>
+                            <button type="submit" id="btn-save-car" class="flex-1 bg-hadoyellow text-black hover:bg-yellow-400 rounded-xl py-3.5 text-xs font-black transition cursor-pointer shadow-lg shadow-hadoyellow/20">حفظ السيارة</button>
                             <button type="button" onclick="resetAdminForm()" id="btn-cancel-edit" class="hidden bg-white/5 border border-white/10 text-white rounded-xl px-5 py-3.5 text-xs font-black transition cursor-pointer">إلغاء</button>
                         </div>
                     </form>
@@ -374,9 +399,8 @@
     </div>
 
     <script>
-        console.log("EL HADO AUTO - PRO VERSION LOADED.");
+        console.log("EL HADO AUTO - EXCLUSIVE EDITION V1 LOADED.");
         
-        // خليتلك نفس المفاتيح باش تتصل بنفس الحساب
         const SUPABASE_URL = 'https://smumscrjovrsudhsaczy.supabase.co'; 
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNtdW1zY3Jqb3Zyc3VkaHNhY3p5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQ3NjI2MzcsImV4cCI6MjEwMDMzODYzN30.TnYYE18XOI2RU21NRZVBSQDtd1h-PsTSsop8P3-Q-5o';
         
@@ -386,12 +410,13 @@
             catch(e) { console.warn("Supabase init fail:", e); }
         }
         
+        // ⚙️ إعدادات الموقع الروابط ورقم الواتساب ⚙️
         const CONFIG = {
-            whatsappNumber: "213551331144", // غيرو لرقم El Hado
-            facebookUrl: "#",
-            instagramUrl: "#",
-            tiktokUrl: "#",
-            mapsUrl: "#",
+            whatsappNumber: "213770232318",
+            facebookUrl: "https://www.facebook.com/share/1EbggKWVuV/?mibextid=wwXIfr",
+            instagramUrl: "https://www.instagram.com/",
+            tiktokUrl: "https://www.tiktok.com/@hadoautoexport?_r=1&_t=ZS-98o7jXtZsHQ",
+            mapsUrl: "https://maps.app.goo.gl/",
             googleScriptUrl: localStorage.getItem('elhado_google_script') || ""
         };
 
@@ -428,7 +453,7 @@
             renderCatalog();
         }
 
-        // ================= ⚡ DIRECT FETCH (TABLE: elhado_vehicles) ⚡ =================
+        // ================= ⚡ FETCH FROM TABLE: elhado_vehicles ⚡ =================
         async function fetchVehicles() {
             try {
                 if (supabaseClient) {
@@ -714,7 +739,7 @@
                 const blob = await compressToBlob(files[i]);
                 const fileName = `hado_${Date.now()}_${Math.random().toString(36).substring(2,7)}.jpg`;
 
-                // Upload to the new bucket
+                // Upload to the bucket: elhado-images
                 const { data, error } = await supabaseClient.storage.from('elhado-images').upload(fileName, blob, { contentType: 'image/jpeg', upsert: false });
                 if(!error && data) {
                     const { data: pubData } = supabaseClient.storage.from('elhado-images').getPublicUrl(fileName);
